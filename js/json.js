@@ -22,6 +22,7 @@ const menuList = [
             {
                 linktext: "Data Science",
                 href: "#",
+                svg: '<svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
                 levelThree: [
                     { linktext: "Machine Learning", href: "#" },
                     { linktext: "Deep Learning", href: "#" },
@@ -36,6 +37,7 @@ const menuList = [
             {
                 linktext: "Mobile Development",
                 href: "#",
+                svg: '<svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
                 levelThree: [
                     { linktext: "Google Flutter", href: "#" },
                     { linktext: "Android Development", href: "#" },
@@ -46,6 +48,22 @@ const menuList = [
                     { linktext: "Kotlin", href: "#" },
                     { linktext: "Mobile App Development", href: "#" },
                     { linktext: "SwiftUI", href: "#" },
+                ]
+            },
+            {
+                linktext: "Programming Languages",
+                href: "#",
+                svg: '<svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                levelThree: [
+                    { linktext: "Python", href: "#" },
+                    { linktext: "Java", href: "#" },
+                    { linktext: "C#(Programming Language)", href: "#" },
+                    { linktext: "C++(Programming Language)", href: "#" },
+                    { linktext: "React JS", href: "#" },
+                    { linktext: "GO (Programming Language)", href: "#" },
+                    { linktext: "Spring Framework", href: "#" },
+                    { linktext: "C (programming Language)", href: "#" },
+                    { linktext: "Javascript", href: "#" },
                 ]
             },
         ]
@@ -74,6 +92,7 @@ const menuList = [
             {
                 linktext: "Communication",
                 href: "#",
+                svg: '<svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
                 levelThree: [
                     { linktext: "Communication Skills", href: "#" },
                     { linktext: "Presentation Skills", href: "#" },
@@ -140,6 +159,7 @@ menuList.forEach((navLevelOne, index) => {
 
     // Handle mouseover event to show level 2 menu
     a.addEventListener('mouseover', function() {
+        a.classList.add('active');
         const popperTwo = document.getElementById('popper-menu-two');
         popperTwo.classList.add('popper-open');
         const popperMenuTwo = document.getElementById('popper-menu-list-two');

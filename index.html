@@ -11,13 +11,13 @@
 </head>
 <body>
     <div class="home-container">
-
+        
         <!-- top notification bar start -->
         <div class="notification-content" id="notification-content">
             <div class="notification-wrapper">
                 <div class="notification-container">
                     <div class="center-content">
-                        <p> <span>Ready to get with the times? |</span>Get the skills with Udemy Business</p>
+                        <p> <span>Ready to get with the times? |</span> &nbsp; Get the skills with Udemy Business</p>
                     </div>
                 </div>
                 <button class="close-btn" id="close-btn">
@@ -29,16 +29,18 @@
         </div>
         
         <!-- top notification bar end -->
+       
         <!-- header start -->
        <header class="nav-wrapper">
            <div class="nav-container">
               <!-- left section -->
               <div class="left-section">
                 <div class="logo-sec">
+                    <!-- logo image -->
                     <a href="" class="logo">
                         <img src="images/logo.png" alt="" class="logo-img">
                        </a>
-    
+                   <!-- Course mega menu satrt -->
                    <nav class="mega-navibar">
                     <button class="course-btn" id="popper-btn">
                         <p>Courses</p>
@@ -52,45 +54,26 @@
                             <div class="poper-inner">
                                 <div class="nav-level-one nav-level">
                                     <ul class="popper-menu-list" id="popper-menu-one">
-                                        <li><a href="" class="popper-link active">
-                                            <span>Developement</span>
-                                            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                        </a>
-                                    </li>
+                                       <!-- content in javascript -->
                                     </ul>
                                 </div>
 
                                 <!-- level 2 menus  -->
                                 <div class="nav-level-two nav-level" id="popper-menu-two">
                                     <ul class="popper-menu-list"  id="popper-menu-list-two">
-                                        <li><a href="" class="popper-link popper-link-two active">
-                                            <span>Developement</span>
-                                            <svg width="6px;" height="6px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                        </a>
-                                    </li>
-
-                                   
-                                    </ul>
-                                </div> 
-                                 <!-- level3 menus -->
-                                 <div class="nav-level-three nav-level" id="popper-menu-three"> 
-                                    <ul class="popper-menu-list" id="popper-menu-list-three">
-                                        <li>
-                                            <p class="menu-head">Popular Topics</p>
-                                        </li>
-                                        <!-- <li><a href="" class="popper-link active">
+                                        <!-- <li><a href="" class="popper-link popper-link-two active">
                                             <span>Developement</span>
                                             <svg width="6px;" height="6px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
                                         </a>
                                     </li> -->
-
-                                  
+                                    </ul>
+                                </div> 
+                                 <!-- level3 menus -->
+                                 <div class="nav-level-three nav-level" id="popper-menu-three"> 
+                                    <p class="menu-head">Popular Topics</p>
+                                    <ul class="popper-menu-list" id="popper-menu-list-three">
                                     </ul>
                                 </div> 
                             </div>
@@ -98,15 +81,65 @@
                         </div>
                        </div>
                    </nav>    
-                       <!-- course button -->
+                       <!-- course mega menu -->
                 
                 </div>
                    
 
              <!-- mobile menu icon -->
              <div class="mobile-menu-icon">
-               <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88 152h336M88 256h336M88 360h336"></path></svg>
-             </div>
+                <div class="inner-mobile-menu">
+                    <!-- login user -->
+                        <button class="mobile-login-btn">
+                        <a href="">
+                                <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                        </a>
+                       </button>
+                       <div class="mobile-notify-wrapper">
+                        <button class="mobile-notify-btn" id="mobile-notify-btn">
+                            <span href="">
+                                <svg fill="#000000" width="25px" height="24px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m13.58 11.6-1.33-2.18V6.33A4.36 4.36 0 0 0 10 2.26a2.45 2.45 0 0 0 0-.38A1.94 1.94 0 0 0 8 0a1.94 1.94 0 0 0-2 1.88 1.64 1.64 0 0 0 0 .38 4.36 4.36 0 0 0-2.25 4.07v3.09L2.42 11.6a1.25 1.25 0 0 0 1.06 1.9h1.77A2.68 2.68 0 0 0 8 16a2.68 2.68 0 0 0 2.75-2.5h1.77a1.25 1.25 0 0 0 1.06-1.9zM7.25 1.88A.7.7 0 0 1 8 1.25a.7.7 0 0 1 .75.63 6 6 0 0 0-.75 0 5.9 5.9 0 0 0-.75 0zM8 14.75a1.44 1.44 0 0 1-1.5-1.25h3A1.44 1.44 0 0 1 8 14.75zm-4.52-2.5 1.34-2.17.18-.31V6.33a4 4 0 0 1 .6-2.12A2.68 2.68 0 0 1 8 3.12a2.68 2.68 0 0 1 2.4 1.09 4 4 0 0 1 .6 2.12v3.44l.18.31 1.34 2.17z"/>
+                                </svg>
+                            </span>
+                           </button>
+                           <!-- mobile notification messages -->
+                           <div class="mobile-notify-container" id="mobile-notify-container">
+                             <div class="inner-mobile-notify">
+                                <div class="mobile-notify-content">
+                                    <ul class="mobile-notify-list-container">
+                                        <li>
+                                            <a href="" class="mobile-notify-list">
+                                                <img src="images/message_girl.png" alt="" class="profile-mini-icon">
+                                                <span class="message-indicator"></span>
+                                                <p>Hi, Still now Not yet Start Your Course</p>
+                                                
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="" class="mobile-notify-list">
+                                                <img src="images/message_girl.png" alt="" class="profile-mini-icon">
+                                                <span class="message-indicator"></span>
+                                                <p>Hi, Still now Not yet Start Your Course</p>
+                                                
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                             </div>
+                           </div>
+                       </div>
+                    
+                        <button class="mobile-toggle-icon">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1.4em" width="1.4em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="48" d="M88 152h336M88 256h336M88 360h336"></path></svg>
+                        </button>
+                      
+
+                </div>
+                </div>
               </div>
 
               
@@ -148,6 +181,339 @@
            </div>
        </header>
         <!-- header end  -->
+       <!-- mobile menu start -->
+       <div class="mobile-overlay">
+       <section class="mobile-menu-wrapper">
+       <div class="mobile-menu-container levelone" >
+      
+        <div class="inner-mobile-container" id="mobile-levelone-container">
+            <nav class="nav-mobile-animation" >
+                <!-- mobile link level1 -->
+                <div class="nav-mobile-levelone-container">
+                    <ul class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <a href="" class="nav-mobile-link blue-text" >
+                            <span class="nav-mobile-text">Log in</span>        
+                           </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link  blue-text">
+                            <span class="nav-mobile-text">Sign up</span>        
+                           </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link blue-text">
+                            <span class="nav-mobile-text">Plans and Prizing</span>        
+                           </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- mobile link level2-->
+                <div class="nav-mobile-levelone-container">
+                    <h2 class="mobile-head">Most Popular</h2>
+                    <ul class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <div class="nav-mobile-link" id="mobile-levelone-link">
+                            <span class="nav-mobile-text black-text" >Web Developement</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        </li>
+                        <li>
+                            <div  class="nav-mobile-link" id="mobile-levelone-link">
+                            <span class="nav-mobile-text black-text">Mobile Developement</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        </li>
+
+                        <li>
+                            <div class="nav-mobile-link" id="mobile-levelone-link">
+                            <span class="nav-mobile-text black-text">All Category</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- mobile link level3 -->
+                <div class="nav-mobile-levelone-container" >
+                    <h2 class="mobile-head">More from Udemy</h2>
+                    <ul class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Udemy Business</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Get App</span>
+                           
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Invite Friends</span>
+                           
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Help</span>        
+                        </a>
+                        </li>
+
+                        <div class="mobile-btn-lang">
+                            <button>
+                                <svg width="20px" height="20px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" >
+    
+                                    <path d="M0 0h48v48H0z" fill="none"/>
+                                    <g id="Shopicon">
+                                        <path d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20c11.046,0,20-8.954,20-20S35.046,4,24,4z M31.96,22
+                                            c-0.208-5.225-1.223-9.846-2.726-13.103c5.649,1.964,9.861,6.998,10.627,13.103H31.96z M24,39.9
+                                            c-1.213-0.955-3.608-5.736-3.954-13.9h7.908C27.608,34.164,25.213,38.945,24,39.9z M20.046,22C20.392,13.836,22.787,9.055,24,8.1
+                                            c1.213,0.955,3.608,5.736,3.954,13.9H20.046z M18.766,8.897C17.264,12.154,16.248,16.775,16.04,22H8.139
+                                            C8.905,15.896,13.117,10.861,18.766,8.897z M16.04,26c0.208,5.225,1.223,9.846,2.726,13.103C13.117,37.139,8.905,32.104,8.139,26
+                                            H16.04z M29.234,39.103c1.502-3.257,2.518-7.878,2.726-13.103h7.902C39.095,32.104,34.883,37.139,29.234,39.103z"/>
+                                    </g>
+                                    </svg>                          
+                                      <span>English</span>
+                            </button>
+                        </div>
+                    </ul>
+                   
+                </div>
+            </nav>
+        </div>
+      </div>
+
+      <div class="mobile-menu-container-leveltwo" id="mobile-leveltwo-container">
+      
+        <div class="inner-mobile-container">
+            <nav class="nav-mobile-animation">
+                <!-- mobile link level1 -->
+                <div class="nav-mobile-levelone-container">
+                    <ul class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                        <div class="nav-mobile-link" id="back-levelone">
+                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            <span class="nav-mobile-text black-text"  style="margin-left: 10px;">Menu</span>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- mobile link level2-->
+                <div class="nav-mobile-levelone-container">
+                    <h2 class="mobile-head">Most Popular</h2>
+                    <ul class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <div class="nav-mobile-link" id="mobile-leveltwo-link">
+                            <span class="nav-mobile-text black-text" >Web Developement</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        </li>
+                        <li>
+                            <div  class="nav-mobile-link" id="mobile-leveltwo-link">
+                            <span class="nav-mobile-text black-text">Mobile Developement</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        </li>
+
+                        <li>
+                            <div  class="nav-mobile-link" id="mobile-leveltwo-link">
+                            <span class="nav-mobile-text black-text">All Category</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- mobile link level3 -->
+                <div class="nav-mobile-levelone-container" >
+                    <h2 class="mobile-head">More from Udemy</h2>
+                    <ul class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Udemy Business</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Get App</span>
+                           
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Invite Friends</span>
+                           
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Help</span>        
+                        </a>
+                        </li>
+
+                        <div class="mobile-btn-lang">
+                            <button>
+                                <svg width="20px" height="20px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" >
+    
+                                    <path d="M0 0h48v48H0z" fill="none"/>
+                                    <g id="Shopicon">
+                                        <path d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20c11.046,0,20-8.954,20-20S35.046,4,24,4z M31.96,22
+                                            c-0.208-5.225-1.223-9.846-2.726-13.103c5.649,1.964,9.861,6.998,10.627,13.103H31.96z M24,39.9
+                                            c-1.213-0.955-3.608-5.736-3.954-13.9h7.908C27.608,34.164,25.213,38.945,24,39.9z M20.046,22C20.392,13.836,22.787,9.055,24,8.1
+                                            c1.213,0.955,3.608,5.736,3.954,13.9H20.046z M18.766,8.897C17.264,12.154,16.248,16.775,16.04,22H8.139
+                                            C8.905,15.896,13.117,10.861,18.766,8.897z M16.04,26c0.208,5.225,1.223,9.846,2.726,13.103C13.117,37.139,8.905,32.104,8.139,26
+                                            H16.04z M29.234,39.103c1.502-3.257,2.518-7.878,2.726-13.103h7.902C39.095,32.104,34.883,37.139,29.234,39.103z"/>
+                                    </g>
+                                    </svg>                          
+                                      <span>English</span>
+                            </button>
+                        </div>
+                    </ul>
+                   
+                </div>
+            </nav>
+        </div>
+      </div>
+
+      <div class="mobile-menu-container-levelthree" id="mobile-levelthree-container">
+      
+        <div class="inner-mobile-container">
+            <nav class="nav-mobile-animation">
+                <!-- mobile link level1 -->
+                <div class="nav-mobile-levelone-container">
+                    <ul  class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <div  class="nav-mobile-link" id="back-levelone">
+                                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                <span class="nav-mobile-text black-text"  style="margin-left: 10px;">Menu</span>
+                            </div>
+                            </li>
+                    </ul>
+                    <ul  class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <div  class="nav-mobile-link" id="back-leveltwo">
+                                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                <span class="nav-mobile-text black-text"  style="margin-left: 10px;">All Category</span>
+                            </div>
+                            </li>
+                    </ul>
+                   
+                </div>
+
+                <!-- mobile link level2-->
+                <div class="nav-mobile-levelone-container">
+                    <h2 class="mobile-head">Most Popular</h2>
+                    <ul class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <a href="" class="nav-mobile-link">
+                            <span class="nav-mobile-text black-text" >Web Developement</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link">
+                            <span class="nav-mobile-text black-text">Mobile Developement</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        </li>
+
+                        <li>
+                            <a href="" class="nav-mobile-link">
+                            <span class="nav-mobile-text black-text">All Category</span>
+                            <svg width="22px" height="22px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- mobile link level3 -->
+                <div class="nav-mobile-levelone-container" >
+                    <h2 class="mobile-head">More from Udemy</h2>
+                    <ul class="nav-mobile-list-levelOne nav-mobile">
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Udemy Business</span>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Get App</span>
+                           
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Invite Friends</span>
+                           
+                        </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-mobile-link black-text">
+                            <span class="nav-mobile-text">Help</span>        
+                        </a>
+                        </li>
+
+                        <div class="mobile-btn-lang">
+                            <button>
+                                <svg width="20px" height="20px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" >
+    
+                                    <path d="M0 0h48v48H0z" fill="none"/>
+                                    <g id="Shopicon">
+                                        <path d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20c11.046,0,20-8.954,20-20S35.046,4,24,4z M31.96,22
+                                            c-0.208-5.225-1.223-9.846-2.726-13.103c5.649,1.964,9.861,6.998,10.627,13.103H31.96z M24,39.9
+                                            c-1.213-0.955-3.608-5.736-3.954-13.9h7.908C27.608,34.164,25.213,38.945,24,39.9z M20.046,22C20.392,13.836,22.787,9.055,24,8.1
+                                            c1.213,0.955,3.608,5.736,3.954,13.9H20.046z M18.766,8.897C17.264,12.154,16.248,16.775,16.04,22H8.139
+                                            C8.905,15.896,13.117,10.861,18.766,8.897z M16.04,26c0.208,5.225,1.223,9.846,2.726,13.103C13.117,37.139,8.905,32.104,8.139,26
+                                            H16.04z M29.234,39.103c1.502-3.257,2.518-7.878,2.726-13.103h7.902C39.095,32.104,34.883,37.139,29.234,39.103z"/>
+                                    </g>
+                                    </svg>                          
+                                      <span>English</span>
+                            </button>
+                        </div>
+                    </ul>
+                   
+                </div>
+            </nav>
+        </div>
+      </div>
+      </section>
+      <!-- close btn -->
+      <button class="mobile-close">
+        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 5L19 19M5 19L19 5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg> 
+      </button>
+     </div>
+    <!-- mobile menu end -->
+
         <!-- main content start -->
         <main>
             <div class="container">
