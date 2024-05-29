@@ -1,11 +1,23 @@
 // top notification bar 
 
 const closeBtn = document.getElementById('close-btn');
+const notification = document.getElementById('notification-content');
+
 closeBtn.addEventListener('click', function() {
-    const notification = document.getElementById('notification-content');
     notification.classList.add('close');
 });
 
+window.addEventListener('scroll', function() {
+    // Check if the scroll position is more than 100px
+    if (window.scrollY > 10) {
+        // Add the 'scrolled' class to the button
+        notification.classList.add('close');
+    } else {
+        // Remove the 'scrolled' class if the scroll position is less than 100px
+        notification.classList.remove('close');
+
+    }
+});
 
 
 // center menu hover display submenu
@@ -35,6 +47,8 @@ window.addEventListener('scroll', function() {
     } else {
         // Remove the 'scrolled' class if the scroll position is less than 100px
         applybutton.classList.remove('showBookBtn');
+        notifisection.classList.remove('close');
+
     }
 });
 
@@ -67,14 +81,14 @@ const mobileNaviLevelThree = document.getElementById('mobile-levelthree-containe
 const mobileLevelOneLink = document.querySelectorAll('#mobile-levelone-link');
 const mobileLevelTwoLink = document.querySelectorAll('#mobile-leveltwo-link');
 
-const backLevelOne = document.querySelector('#back-levelone');
+const backLevelOne = document.querySelectorAll('#back-levelone');
 const backLevelTwo = document.getElementById('back-leveltwo'); 
 
 mobileToggle.addEventListener('click', function(){
     mobileMenuContainer.classList.add('overlay-open');
     mobileMenuCloseBtn.classList.add('close-zoom');
     mobileNaviLevelTwo.classList.add('hidden');
-    mobileNaviLevelTwo.classList.add('side-menu-show');
+    mobileNaviLevelTwo.classList.add('side-menu-hide');
     mobileNaviLevelThree.classList.add('hidden');
     mobileNaviLevelThree.classList.add('side-menu-hide');
 });
@@ -104,7 +118,7 @@ mobileLevelTwoLink.forEach((levelTwoLink)=>{
         mobileNaviLevelThree.classList.remove('hidden');
         mobileNaviLevelThree.classList.remove('side-menu-hide');
         mobileNaviLevelTwo.classList.add('hidden');
-        mobileNaviLevelTwo.classList.add('side-menu-show');
+        mobileNaviLevelTwo.classList.add('side-menu-hide');
         mobileNaviLevelOne.classList.add('side-menu-hide');
         mobileNaviLevelOne.classList.add('hidden');
         
@@ -113,14 +127,17 @@ mobileLevelTwoLink.forEach((levelTwoLink)=>{
 });
 
 // back level one 
-backLevelOne.addEventListener('mouseover',function(){
-    mobileNaviLevelOne.classList.remove('side-menu-hide');
-    mobileNaviLevelOne.classList.remove('hidden');
-    mobileNaviLevelTwo.classList.add('side-menu-hide');
-    mobileNaviLevelTwo.classList.add('hidden');
-    mobileNaviLevelThree.classList.add('side-menu-hide');
-    mobileNaviLevelThree.classList.add('hidden');
+backLevelOne.forEach((mainmenu)=>{
+    mainmenu.addEventListener('mouseover',function(){
+        mobileNaviLevelOne.classList.add('side-menu-show');
+        mobileNaviLevelOne.classList.remove('hidden');
+        mobileNaviLevelTwo.classList.add('side-menu-hide');
+        mobileNaviLevelTwo.classList.add('hidden');
+        mobileNaviLevelThree.classList.add('side-menu-hide');
+        mobileNaviLevelThree.classList.add('hidden');
+    });
 });
+
 backLevelTwo.addEventListener('mouseover',function(){
     mobileNaviLevelOne.classList.add('side-menu-hide');
     mobileNaviLevelOne.classList.add('hidden');
@@ -131,3 +148,79 @@ backLevelTwo.addEventListener('mouseover',function(){
 });
 
 // mobile sidebar menu end
+
+
+// sticky desktop header start
+const headerContent = document.querySelector('.nav-wrapper');
+window.onscroll = function(){
+    stickyHeader();
+};
+
+function stickyHeader(){
+    if(window.scrollY > 600 ){
+        headerContent.classList.add('fixed');
+    }
+    else{
+        headerContent.classList.remove('fixed');
+    }
+}
+// sticky desktop header end
+
+// main slider start
+let SliderPosition = 0;
+const mainSliders = document.querySelectorAll('.main-slide-item');
+const totalSlider = mainSliders.length;
+const mainPrevBtn = document.querySelector('#main-arrow-left');
+const mainNxtBtn = document.querySelector('#main-arrow-right');
+
+mainPrevBtn.addEventListener('click', function(){
+    PrevSlider();
+});
+
+mainNxtBtn.addEventListener('click', function(){
+    NextSlider();
+});
+
+function updatePosition(){
+    mainSliders.forEach((slider)=>{
+        slider.classList.add('slide-hidden');
+        slider.classList.remove('slide-active');
+    });
+    mainSliders[SliderPosition].classList.add('slide-active');
+    mainSliders[SliderPosition].classList.remove('slide-hidden');
+}
+function PrevSlider(){
+    if(SliderPosition ===0){
+        SliderPosition  =totalSlider-1;
+      }else{
+        SliderPosition--;
+      }
+    updatePosition();
+}
+function NextSlider(){
+  if(SliderPosition == totalSlider-1){
+    SliderPosition  = 0;
+  }else{
+    SliderPosition++;
+  }
+    updatePosition();
+}
+// Initialize the first slide as active
+updatePosition();
+
+
+// Auto-slide functionality
+const slideInterval = 4000; // Set the interval time (3000ms = 3 seconds)
+let autoSlide = setInterval(NextSlider, slideInterval);
+
+// Pause auto-slide on mouse hover
+mainSliders.forEach((slider) => {
+    slider.addEventListener('mouseover', () => {
+        clearInterval(autoSlide);
+    });
+
+    slider.addEventListener('mouseout', () => {
+        autoSlide = setInterval(NextSlider, slideInterval);
+    });
+});
+// main slider end

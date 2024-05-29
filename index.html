@@ -28,8 +28,7 @@
             </div>
         </div>
         
-        <!-- top notification bar end -->
-       
+        <!-- top notification bar end -->    
         <!-- header start -->
        <header class="nav-wrapper">
            <div class="nav-container">
@@ -518,16 +517,271 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="left">
-                        <div class="col">
-                            <div id="menuContainer"></div>
+                    <section class="main-slider-container">
+                        <div class="main-slider-wrapper">
+                            
+                            <div class="main-slide-item">
+                                    <div class="main-slide-image">
+                                        <picture>
+                                            <source srcset="images/maxslide1.jpg" type="" width = "1600" hight = "400" media= "(max-width:43.75rem)">
+                                            <img src="images/bigslide1.jpg" alt="" width = "1600" hight = "400">
+
+                                        </picture>
+                                    </div>
+                                    <div class="main-slide-content">
+                                        <h1>Learning that gets you</h1>
+                                        <p>Skills for your present (and your future). Get started with us.</p>
+                                    </div>
+                            </div>
+                            <!-- item2 -->
+                            <div class="main-slide-item">
+                                <div class="main-slide-image">
+                                    <picture>
+                                        <source srcset="images/minslide2.jpg" type="" width = "1600" hight = "400" media= "(max-width:43.75rem)">
+                                        <img src="images/slider1.jpg" alt="" width = "1600" hight = "400">
+
+                                    </picture>
+                                </div>
+                                <div class="main-slide-content">
+                                    <h1>Skills that drive you forward</h1>
+                                    <p>Technology and the world of work change fast — with us, you’re faster.
+                                         Get the skills to achieve goals and stay competitive.</p>
+                                         <div class="main-slide-btn-container">
+                                            <a href="">
+                                                <span>Plan for Individual</span>
+                                            </a>
+                                         </div>
+                                </div>
                         </div>
-                    </div>
-                    <div class="right">
-                        <div class="col">right</div>
-                    </div>
+                        </div>
+                        <!-- slider arrows -->
+                       
+                            <button class=" main-arrow main-slide-left-arrow" id="main-arrow-left">
+                                <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 7L10 12L15 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </button>
+                            <button class="main-arrow main-slide-right-arrow" id="main-arrow-right">
+                                <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 7L15 12L10 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </button>
+
+                            <div class="main-slide-dots">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                       
+
+                    </section>
                 </div>
             </div>
+
+            <!-- category filter start -->
+            <div class="container">
+                <div class="row">
+                    <section class="main-heading">
+                         <h1>All the skills you need in one place</h1>
+                         <p>From critical skills to technical topics, Udemy supports your professional development.</p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- category filter end -->
+
+            <div class="container">
+                <div class="row">
+                    <section class="category-full-container">
+                        <!-- main category -->
+                        <div class="main-category-container">
+                            <div class="main-category-wrapper">
+                                <div class="main-category-item ">
+                                    
+                                  <button><span >Web Developement</span></button>  
+                                </div>
+                                <div class="main-category-item  category-active">
+                                    
+                                    <button><span class="text-active">IT Certification</span></button>  
+                                  </div>
+                                  <div class="main-category-item">
+                                    <button><span>Leadership</span></button>  
+                                  </div>
+                                  <div class="main-category-item">
+                                    <button><span>Data Science</span></button>  
+                                  </div>
+                                  <div class="main-category-item">
+                                    <button><span>Communication</span></button>  
+                                  </div>
+                                  <div class="main-category-item">
+                                    <button><span>Business Analytics & Intelligence</span></button>  
+                                  </div>
+                                  
+                            </div>
+                        </div>
+
+                        <!-- subcategories start -->
+                         <section class="sub-category-container">
+                            <!-- sub category list satrt -->
+                            <div class="sub-category-heading">
+                             <div class="sub-category-wrapper">
+                                   <div class="sub-category-item ">
+                                       <input type="radio" name="" id="" class="hidden-input">
+                                       <label for="" class="sub-active">
+                                        <span class="text-white">Web Developement</span>
+                                        <span class="text-white">13.3M+ learners</span>
+                                       </label>
+                                   </div>
+                                   <div class="sub-category-item">
+                                    <input type="radio" name="" id="" class="hidden-input">
+                                    <label for="">
+                                     <span>javascript</span>
+                                     <span>13.3M+ learners</span>
+                                    </label>
+                                </div>
+                                <div class="sub-category-item">
+                                    <input type="radio" name="" id="" class="hidden-input">
+                                    <label for="">
+                                     <span>ReactJS</span>
+                                     <span>13.3M+ learners</span>
+                                    </label>
+                                </div>
+                                <div class="sub-category-item">
+                                    <input type="radio" name="" id="" class="hidden-input">
+                                    <label for="">
+                                     <span>Angular</span>
+                                     <span>13.3M+ learners</span>
+                                    </label>
+                                </div>
+                                <div class="sub-category-item">
+                                    <input type="radio" name="" id="" class="hidden-input">
+                                    <label for="">
+                                     <span>Java</span>
+                                     <span>13.3M+ learners</span>
+                                    </label>
+                                </div><div class="sub-category-item">
+                                    <input type="radio" name="" id="" class="hidden-input">
+                                    <label for="">
+                                     <span>Android Developer</span>
+                                     <span>13.3M+ learners</span>
+                                    </label>
+                                </div>
+                                <div class="sub-category-item">
+                                    <input type="radio" name="" id="" class="hidden-input">
+                                    <label for="">
+                                     <span>IOS Develoment</span>
+                                     <span>13.3M+ learners</span>
+                                    </label>
+                                </div>
+                                <div class="sub-category-item">
+                                    <input type="radio" name="" id="" class="hidden-input">
+                                    <label for="">
+                                     <span>CSS</span>
+                                     <span>13.3M+ learners</span>
+                                    </label>
+                                </div>
+                             </div>
+                            </div>
+                             <!-- sub category list end -->
+
+                             <!-- sub category content list start -->
+                             <div class="sub-cat-content-container">
+                             <div class="sub-cat-content">
+                             <div class="sub-cat-content-wrapper">
+                                <div class="sub-cat-content-item">
+                                    <div class="inner-cat-content-item">
+                                        <section class="cat-content-item-wrapper">
+                                              <div class="cat-content-image">
+                                                    <img src="images/course1.jpg" alt="">
+                                              </div>
+                                              <div class="cat-content-text">
+
+                                              </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="sub-cat-content-item">
+                                    <div class="inner-cat-content-item">
+                                        <section class="cat-content-item-wrapper">
+                                              <div class="cat-content-image">
+                                                    <img src="images/course1.jpg" alt="">
+                                              </div>
+                                              <div class="cat-content-text">
+                                                   <h2>The Complete 2024 Web Development Bootcamp</h2>
+                                                   <p>Dr. Angela Yu</p>
+                                                   <div class="star-container"></div>
+                                                   <span>
+                                                    4.6 
+                                                   </span>
+                                                   <span></span>
+                                              </div>
+                                              <p>$3,099</p>
+                                              <button class="tag-btn">BestSeller</button>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="sub-cat-content-item">
+                                    <div class="inner-cat-content-item">
+                                        <section class="cat-content-item-wrapper">
+                                              <div class="cat-content-image">
+                                                    <img src="images/course1.jpg" alt="">
+                                              </div>
+                                              <div class="cat-content-text">
+
+                                              </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="sub-cat-content-item">
+                                    <div class="inner-cat-content-item">
+                                        <section class="cat-content-item-wrapper">
+                                              <div class="cat-content-image">
+                                                    <img src="images/course1.jpg" alt="">
+                                              </div>
+                                              <div class="cat-content-text">
+
+                                              </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="sub-cat-content-item">
+                                    <div class="inner-cat-content-item">
+                                        <section class="cat-content-item-wrapper">
+                                              <div class="cat-content-image">
+                                                    <img src="images/course1.jpg" alt="">
+                                              </div>
+                                              <div class="cat-content-text">
+
+                                              </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="sub-cat-content-item">
+                                    <div class="inner-cat-content-item">
+                                        <section class="cat-content-item-wrapper">
+                                              <div class="cat-content-image">
+                                                    <img src="images/course1.jpg" alt="">
+                                              </div>
+                                              <div class="cat-content-text">
+
+                                              </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                
+                              </div>
+                              </div>
+                            </div> 
+
+                             <!-- sub category content list end -->
+                         
+                        </section>
+                        <!-- subcategories end -->
+
+                    </section>
+                 </div>
+            </div>
+
             
           </main>
         <!-- main content end -->
