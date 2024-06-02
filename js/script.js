@@ -225,6 +225,114 @@ mainSliders.forEach((slider) => {
 });
 // main slider end
 
+// maion category start
+var mainCatContainer = document.querySelector('.main-category-wrapper') ;
+var mainCatItems = document.querySelectorAll('.main-category-item');
+var mainCatLeftArrow = document.querySelector('.main-category-left-arrow');
+var mainCatRightArrow = document.querySelector('.main-category-right-arrow');
+
+let mainCatIndex = 0;
+
+function getMainCatItemWidth() {
+    return mainCatItems[0].offsetWidth;
+}
+
+function mainCatShowSlide(mainCatIndex) {
+    const mainCatItemWidth = getMainCatItemWidth();
+    const itemsToShow = mainCatVisibleItems();
+    mainCatContainer.style.transition = 'transform 0.5s ease-in-out';
+    mainCatContainer.style.transform = `translateX(${-mainCatIndex * mainCatItemWidth}px)`;
+}
+
+// function mainCatArrowVisibility() {
+//     mainCatLeftArrow.style.display = (mainCatIndex === 0) ? 'none' : 'flex';
+//     mainCatRightArrow.style.display = (mainCatIndex >= mainCatItems.length - mainCatVisibleItems()) ? 'none' : 'flex';
+// }
+
+function mainCatVisibleItems() {
+    const mainCatContainerWidth = document.querySelector('.main-category-wrapper').clientWidth;
+    const mainCatItemWidth = getMainCatItemWidth();
+    return Math.floor(mainCatContainerWidth / mainCatItemWidth);
+}
+
+// Initialize the slider
+mainCatShowSlide(mainCatIndex);
+// mainCatArrowVisibility();
+
+mainCatLeftArrow.addEventListener('click', () => {
+    if (mainCatIndex > 0) {
+        mainCatIndex--;
+        mainCatShowSlide(mainCatIndex);
+        // mainCatArrowVisibility();
+    }
+});
+
+mainCatRightArrow.addEventListener('click', () => {
+    if (mainCatIndex < mainCatItems.length - mainCatVisibleItems()) {
+        mainCatIndex++;
+        mainCatShowSlide(mainCatIndex);
+        // mainCatArrowVisibility();
+    }
+});
+
+// Adjust the slider on window resize
+window.addEventListener('resize', () => {
+    mainCatShowSlide(mainCatIndex);
+    mainCatArrowVisibility();
+});
+
+// main category end
+
+// sub category slider
+var subCatContainer = document.querySelector('.sub-category-wrapper');
+var subCatItems = document.querySelectorAll('.sub-category-item');
+var subCatLeftArrow = document.querySelector('.sub-category-left-arrow');
+var subCatRightArrow = document.querySelector('.sub-category-right-arrow');                    
+
+let subCatIndex = 0;
+
+function getSubCatSliderWidth() {
+    return subCatItems[0].offsetWidth; // corrected from innerWidth to offsetWidth
+}
+
+function subCatShowSlide(subCatIndex) {
+    const subCatSlideWidth = getSubCatSliderWidth();
+    subCatContainer.style.transition = 'transform 0.5s ease-in-out';
+    subCatContainer.style.transform = `translateX(${-subCatIndex * subCatSlideWidth}px)`;
+}
+
+function subCatArrowVisibility() {
+    subCatLeftArrow.style.display = (subCatIndex === 0) ? 'none' : 'flex';
+    subCatRightArrow.style.display = (subCatIndex >= subCatItems.length - subCatvisibleItems()) ? 'none' : 'flex';
+}
+
+function subCatvisibleItems() {
+    const subCatContainerWidth = subCatContainer.clientWidth;
+    const subCatItemWidth = getSubCatSliderWidth(); // corrected function name
+    return Math.floor(subCatContainerWidth / subCatItemWidth);
+}
+
+// Initialize the slider
+subCatShowSlide(subCatIndex);
+subCatArrowVisibility();
+
+subCatLeftArrow.addEventListener('click', () => {
+    if (subCatIndex > 0) {
+        subCatIndex--;
+        subCatShowSlide(subCatIndex);
+        subCatArrowVisibility();
+    }
+});
+
+subCatRightArrow.addEventListener('click', () => {
+    if (subCatIndex < subCatItems.length - subCatvisibleItems()) {
+        subCatIndex++;
+        subCatShowSlide(subCatIndex);
+        subCatArrowVisibility();
+    }
+});
+
+// sub category slider end
 
 // sub category content slider
 
@@ -236,9 +344,7 @@ var subCatContentRightArrow = document.querySelector('.sub-category-cont-right-a
 
 let subCatContSliderIndex = 0;
 let autoScrollInterval;
-let isDragging = false;
-let startX;
-let scrollLeft;
+
 
 function getSubContSlideWidth() {
     return subCatContentItems[0].clientWidth;
@@ -306,31 +412,3 @@ subCatContentContainer.addEventListener('mouseover', stopAutoScroll);
 subCatContentContainer.addEventListener('mouseout', startAutoScroll);
 
 // Dragging functionality
-subCatContentContainer.addEventListener('pointerdown', (e) => {
-    isDragging = true;
-    startX = e.pageX - subCatContentContainer.offsetLeft;
-    scrollLeft = subCatContentContainer.scrollLeft;
-    subCatContentContainer.style.cursor = 'grabbing';
-    subCatContentContainer.style.transition = 'none'; // Disable transition during drag
-    stopAutoScroll(); // Stop auto-scroll when dragging
-});
-
-subCatContentContainer.addEventListener('pointerleave', () => {
-    isDragging = false;
-    subCatContentContainer.style.cursor = 'grab';
-});
-
-subCatContentContainer.addEventListener('pointerup', () => {
-    alert(subCatContentContainer)
-    isDragging = false;
-    subCatContentContainer.style.cursor = 'grab';
-    startAutoScroll(); // Restart auto-scroll after dragging
-});
-
-subCatContentContainer.addEventListener('pointermove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - subCatContentContainer.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust the scroll speed
-    subCatContentContainer.scrollLeft = scrollLeft - walk;
-});
