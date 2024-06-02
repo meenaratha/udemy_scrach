@@ -41,13 +41,13 @@ const applybutton = document.getElementById('apply-btn');
 // Add a scroll event listener to the window
 window.addEventListener('scroll', function() {
     // Check if the scroll position is more than 100px
-    if (window.scrollY > 100) {
+    if (window.scrollY > 600) {
         // Add the 'scrolled' class to the button
         applybutton.classList.add('showBookBtn');
     } else {
         // Remove the 'scrolled' class if the scroll position is less than 100px
         applybutton.classList.remove('showBookBtn');
-        notifisection.classList.remove('close');
+        applybutton.classList.remove('close');
 
     }
 });
@@ -224,3 +224,105 @@ mainSliders.forEach((slider) => {
     });
 });
 // main slider end
+
+
+// sub category content slider
+
+var subCatContentContainer = document.querySelector('.sub-cat-content-wrapper');
+var subCatContentItems = document.querySelectorAll('.sub-cat-content-item');
+var subCatContentLeftArrow = document.querySelector('.sub-category-cont-left-arrow');
+var subCatContentRightArrow = document.querySelector('.sub-category-cont-right-arrow');
+
+let subCatContSliderIndex = 0;
+let autoScrollInterval;
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+function getSubContSlideWidth() {
+    return subCatContentItems[0].clientWidth;
+}
+
+function subCatContShowSlide(index) {
+    const slideWidth = getSubContSlideWidth();
+    subCatContentContainer.style.transition = 'transform 0.5s ease-in-out'; // Add smooth transition
+    subCatContentContainer.style.transform = `translateX(${-index * slideWidth}px)`;
+}
+
+function updateArrowVisibility() {
+    subCatContentLeftArrow.style.display = (subCatContSliderIndex === 0) ? 'none' : 'flex';
+    subCatContentRightArrow.style.display = (subCatContSliderIndex >= subCatContentItems.length - visibleItems()) ? 'none' : 'flex';
+}
+
+function visibleItems() {
+    const containerWidth = subCatContentContainer.clientWidth;
+    const itemWidth = getSubContSlideWidth();
+    return Math.floor(containerWidth / itemWidth);
+}
+
+function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+        subCatContSliderIndex = (subCatContSliderIndex < subCatContentItems.length - visibleItems()) ? subCatContSliderIndex + 1 : 0;
+        subCatContShowSlide(subCatContSliderIndex);
+        updateArrowVisibility();
+    }, 5000); // Change slides every 5 seconds
+}
+
+function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+}
+
+// Initialize the slider
+subCatContShowSlide(subCatContSliderIndex);
+updateArrowVisibility();
+startAutoScroll();
+
+subCatContentLeftArrow.addEventListener('click', () => {
+    if (subCatContSliderIndex > 0) {
+        subCatContSliderIndex--;
+        subCatContShowSlide(subCatContSliderIndex);
+        updateArrowVisibility();
+    }
+});
+
+subCatContentRightArrow.addEventListener('click', () => {
+    if (subCatContSliderIndex < subCatContentItems.length - visibleItems()) {
+        subCatContSliderIndex++;
+        subCatContShowSlide(subCatContSliderIndex);
+        updateArrowVisibility();
+    }
+});
+
+window.addEventListener('resize', () => {
+    subCatContShowSlide(subCatContSliderIndex);
+    updateArrowVisibility();
+});
+
+// Stop auto-scrolling on mouseover
+subCatContentContainer.addEventListener('mouseover', stopAutoScroll);
+
+// Restart auto-scrolling when mouse leaves
+subCatContentContainer.addEventListener('mouseout', startAutoScroll);
+
+// Dragging functionality
+subCatContentContainer.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX - subCatContentContainer.offsetLeft;
+    scrollLeft = subCatContentContainer.scrollLeft;
+});
+
+subCatContentContainer.addEventListener('mouseleave', () => {
+    isDragging = false;
+});
+
+subCatContentContainer.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+subCatContentContainer.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - subCatContentContainer.offsetLeft;
+    const walk = (x - startX) * 3; // Adjust the scroll speed
+    subCatContentContainer.scrollLeft = scrollLeft - walk;
+});
