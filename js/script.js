@@ -229,6 +229,7 @@ mainSliders.forEach((slider) => {
 // sub category content slider
 
 var subCatContentContainer = document.querySelector('.sub-cat-content-wrapper');
+var subCatContent = document.querySelector('.sub-cat-content');
 var subCatContentItems = document.querySelectorAll('.sub-cat-content-item');
 var subCatContentLeftArrow = document.querySelector('.sub-category-cont-left-arrow');
 var subCatContentRightArrow = document.querySelector('.sub-category-cont-right-arrow');
@@ -305,24 +306,31 @@ subCatContentContainer.addEventListener('mouseover', stopAutoScroll);
 subCatContentContainer.addEventListener('mouseout', startAutoScroll);
 
 // Dragging functionality
-subCatContentContainer.addEventListener('mousedown', (e) => {
+subCatContentContainer.addEventListener('pointerdown', (e) => {
     isDragging = true;
     startX = e.pageX - subCatContentContainer.offsetLeft;
     scrollLeft = subCatContentContainer.scrollLeft;
+    subCatContentContainer.style.cursor = 'grabbing';
+    subCatContentContainer.style.transition = 'none'; // Disable transition during drag
+    stopAutoScroll(); // Stop auto-scroll when dragging
 });
 
-subCatContentContainer.addEventListener('mouseleave', () => {
+subCatContentContainer.addEventListener('pointerleave', () => {
     isDragging = false;
+    subCatContentContainer.style.cursor = 'grab';
 });
 
-subCatContentContainer.addEventListener('mouseup', () => {
+subCatContentContainer.addEventListener('pointerup', () => {
+    alert(subCatContentContainer)
     isDragging = false;
+    subCatContentContainer.style.cursor = 'grab';
+    startAutoScroll(); // Restart auto-scroll after dragging
 });
 
-subCatContentContainer.addEventListener('mousemove', (e) => {
+subCatContentContainer.addEventListener('pointermove', (e) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - subCatContentContainer.offsetLeft;
-    const walk = (x - startX) * 3; // Adjust the scroll speed
+    const walk = (x - startX) * 2; // Adjust the scroll speed
     subCatContentContainer.scrollLeft = scrollLeft - walk;
 });
