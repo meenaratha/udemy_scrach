@@ -278,7 +278,7 @@ mainCatRightArrow.addEventListener('click', () => {
 // Adjust the slider on window resize
 window.addEventListener('resize', () => {
     mainCatShowSlide(mainCatIndex);
-    mainCatArrowVisibility();
+    // mainCatArrowVisibility();
 });
 
 // main category end
@@ -412,3 +412,104 @@ subCatContentContainer.addEventListener('mouseover', stopAutoScroll);
 subCatContentContainer.addEventListener('mouseout', startAutoScroll);
 
 // Dragging functionality
+
+
+// learning goal tab in desktop
+const learntabButton = document.querySelectorAll('#tab_button');
+const learntabContent = document.querySelectorAll('#tab_content');
+
+learntabButton.forEach((tabButton, index) => {
+    tabButton.addEventListener('click', function() {
+        // Remove tab-active class from all tab buttons
+        learntabButton.forEach(btn => btn.classList.remove('tab-active'));
+        
+        // Add tab-active class to the clicked tab button
+        tabButton.classList.add('tab-active');
+
+        // Hide all tab content
+        learntabContent.forEach(tabCont => tabCont.classList.add('tab-hide'));
+        
+        // Show the corresponding tab content
+        learntabContent[index].classList.remove('tab-hide');
+       
+    });
+});
+
+
+// learning goal mobile slider
+document.addEventListener('DOMContentLoaded', function() {
+ const learningGoalWrapper = document.querySelector('.learning-goal-mobile-wrapper');
+ const learningGoalItem = document.querySelectorAll('.learning-goal-mobile-item');
+ // auto slide
+const tabIndicaters = document.querySelector('.indicater-container');
+let currentIndex = 0;
+const tabslideInterval = 3000; // 3 seconds
+let tabautoSlideInterval;
+
+// Create dots dynamically
+learningGoalItem.forEach((_, index) => {
+    const tabIndicaterdot = document.createElement('div');
+    tabIndicaterdot.classList.add('tab-indicater-item');
+    if (index === 0) tabIndicaterdot.classList.add('indicator-active'); // Set the first dot as active
+    tabIndicaters.appendChild(tabIndicaterdot);
+});
+
+const tabIndicaterdot = document.querySelectorAll('.tab-indicater-item');
+
+const tabMobileSlide = () => {
+    // Update slide position
+    learningGoalWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    // Update dots
+    tabIndicaterdot.forEach((tabIndicator, index) => {
+        tabIndicator.classList.toggle('indicator-active', index === currentIndex);
+    });
+
+    // Update index for next slide
+    currentIndex = (currentIndex + 1) % learningGoalItem.length;
+
+   
+};
+const tabstartAutoSlide = () => {
+    tabautoSlideInterval = setInterval(tabMobileSlide, tabslideInterval);
+};
+
+const tabstopAutoSlide = () => {
+    clearInterval(tabautoSlideInterval);
+};
+// Start auto-slide
+tabstartAutoSlide();
+// Stop auto-slide on hover
+learningGoalWrapper.addEventListener('mouseenter', tabstopAutoSlide);
+learningGoalWrapper.addEventListener('mouseleave', tabstartAutoSlide);
+
+
+// drag the slider
+
+});
+
+
+
+// subscribe plan
+
+const subscribeHeader = document.querySelectorAll('.subscribe-plan-head');
+const subscribeContent = document.querySelectorAll('.subscribe-content'); // Added missing dot
+
+// Initially show the first content
+subscribeContent[0].classList.add('subscribe-content-show');
+
+subscribeHeader.forEach((subscribeHead, index) => {
+    subscribeHead.addEventListener('click', function() {
+        // Check if the clicked content is already visible
+        if (subscribeContent[index].classList.contains('subscribe-content-show')) {
+            // Hide the content if it is already visible
+            subscribeContent[index].classList.remove('subscribe-content-show');
+        } else {
+            // Hide all tab content
+            subscribeContent.forEach(subscribeCont => subscribeCont.classList.remove('subscribe-content-show'));
+            
+            // Show the corresponding tab content
+            subscribeContent[index].classList.add('subscribe-content-show');
+        }
+    });
+});
